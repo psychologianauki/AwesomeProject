@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet } from "react-native";
 import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
 import { SCREEN_NAMES } from "../App";
 import { TouchableOpacity } from "react-native";
@@ -9,7 +9,7 @@ const nonSelectedColor = "#5c5c5c";
 
 const TopBar = (props) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TopBarIcon screenName={SCREEN_NAMES.MAIN} iconName="fire" {...props} />
       <TopBarIcon
         screenName={SCREEN_NAMES.CHAT}
@@ -21,7 +21,7 @@ const TopBar = (props) => {
         iconName="users"
         {...props}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

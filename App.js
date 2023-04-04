@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import TopBar from "./components/top-bar";
 import { useState } from "react";
 import ChatScreen from "./screens/chat-screen";
@@ -16,13 +16,13 @@ export default function App() {
   const [currentScreen, setCurrentScreen] = useState("main");
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TopBar selectScreen={setCurrentScreen} currentScreen={currentScreen} />
       {currentScreen === SCREEN_NAMES.MAIN && <MainScreen />}
       {currentScreen === SCREEN_NAMES.PROFILE && <ProfileScreen />}
       {currentScreen === SCREEN_NAMES.CHAT && <ChatScreen />}
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
